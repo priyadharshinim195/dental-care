@@ -9,3 +9,11 @@ createRoot(document.getElementById("root")).render(
     <PublicSite />
   </StrictMode>,
 );
+import AdminApp from "./admin/AdminApp";
+import PublicSite from "./site/PublicSite";
+
+const isAdmin = window.location.pathname.startsWith("/admin");
+
+createRoot(document.getElementById("root")).render(
+  isAdmin ? <AdminApp /> : <PublicSite />
+);
