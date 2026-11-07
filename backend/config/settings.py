@@ -61,6 +61,8 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+
+
 ROOT_URLCONF = "config.urls"
 TEMPLATES = [{
     "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -91,6 +93,14 @@ DATABASES = {
     }
 }
 
+
+CORS_ALLOWED_ORIGINS = [
+    "https://dental-care-ochre-three.vercel.app/",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://dental-care-ochre-three.vercel.app/",
+]
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator", "OPTIONS": {"min_length": 10}},
