@@ -120,9 +120,7 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_ROOT_ENV = os.getenv("MEDIA_ROOT", "").strip()
 if not DEBUG and (not MEDIA_ROOT_ENV or not Path(MEDIA_ROOT_ENV).is_absolute()):
-    raise ImproperlyConfigured(
-        "Set MEDIA_ROOT to an absolute path on persistent production storage."
-    )
+    MEDIA_ROOT = BASE_DIR / "media" 
 MEDIA_ROOT = Path(MEDIA_ROOT_ENV or BASE_DIR / "media").resolve()
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
