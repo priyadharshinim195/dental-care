@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "apps.website_settings",
     "apps.media_manager",
     "apps.dashboard",
+    
 ]
 
 MIDDLEWARE = [
@@ -116,6 +117,7 @@ USE_TZ = True
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_ROOT_ENV = os.getenv("MEDIA_ROOT", "").strip()
 if not DEBUG and (not MEDIA_ROOT_ENV or not Path(MEDIA_ROOT_ENV).is_absolute()):
     raise ImproperlyConfigured(
